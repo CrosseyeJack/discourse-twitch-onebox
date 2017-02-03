@@ -28,7 +28,7 @@ end
 class Onebox::Engine::TwitchVideoOnebox
 	include Onebox::Engine
 
-	REGEX = /^https?:\/\/(?:www\.)?twitch.tv\/(?!directory)[a-zA-Z0-9_]{4,25}\/v\/(\w+)/
+	REGEX = /^https?:\/\/(?:www\.)?twitch.tv\/(?:(?!directory)[a-zA-Z0-9_]{4,25}\/v|videos)\/(\d+)(?:(?:\?(?:.+)?t=)(\w+))?&?/
 	matches_regexp REGEX
 
 	def id
