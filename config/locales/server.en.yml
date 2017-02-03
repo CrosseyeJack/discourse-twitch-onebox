@@ -1,5 +1,5 @@
 en:
   site_settings:
-    twitch_onebox_height: "Embedded Twitch Player Height?"
-    twitch_onebox_width: "Embedded Twitch Player Width?"
-    twitch_onebox_autoplay: "Embedded Twitch Player AutoPlay?"
+    twitch_onebox_height: "Embedded Twitch Player Height? (Requires Rebake)"
+    twitch_onebox_width: "Embedded Twitch Player Width? (Requires Rebake)"
+    twitch_onebox_autoplay: "Embedded Twitch Player AutoPlay? (Requires Rebake)"
