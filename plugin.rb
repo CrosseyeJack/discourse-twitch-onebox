@@ -5,6 +5,10 @@
 # url: https://github.com/critcola/discourse-twitch-onebox
 
 # Onebox for Twitch streams.
+enabled_site_setting :twitch_onebox_height
+enabled_site_setting :twitch_onebox_width
+enabled_site_setting :twitch_onebox_autoplay
+
 class Onebox::Engine::TwitchStreamOnebox
 	include Onebox::Engine
 
@@ -16,7 +20,7 @@ class Onebox::Engine::TwitchStreamOnebox
 	end
 	
 	def to_html
-		"<iframe src=\"//player.twitch.tv/?channel=#{channel}&autoplay=false\" width=\"620\" height=\"378\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<iframe src=\"//player.twitch.tv/?channel=#{channel}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
 
@@ -32,7 +36,7 @@ class Onebox::Engine::TwitchVideoOnebox
 	end
 	
 	def to_html
-		"<iframe src=\"//player.twitch.tv/?video=v#{id}&autoplay=false\" width=\"620\" height=\"378\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<iframe src=\"//player.twitch.tv/?video=v#{id}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
 
@@ -52,6 +56,6 @@ class Onebox::Engine::TwitchClipsOnebox
 	end
 	
 	def to_html
-		"<iframe src=\"//clips.twitch.tv/embed?clip=#{channel}/#{clip_name}&autoplay=false\" width=\"620\" height=\"378\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<iframe src=\"//clips.twitch.tv/embed?clip=#{channel}/#{clip_name}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
