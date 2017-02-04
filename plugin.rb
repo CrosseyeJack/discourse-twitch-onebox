@@ -36,11 +36,7 @@ class Onebox::Engine::TwitchVideoOnebox
 	end
   
 	def timestamp
-    if !@url.match(REGEX)[2].nil?
-		  "&time=" +@url.match(REGEX)[2]
-    else
-      ""
-    end
+		"&time=" +@url.match(REGEX)[2]
 	end
 	
 	def to_html
