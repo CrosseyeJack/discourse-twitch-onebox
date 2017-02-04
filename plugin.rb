@@ -34,9 +34,16 @@ class Onebox::Engine::TwitchVideoOnebox
 	def id
 		@url.match(REGEX)[1]
 	end
+  
+	def timestamp
+    if !@url.match(REGEX)[2].nil?
+		  "&time=" +@url.match(REGEX)[2]
+    else
+      ""
+	end
 	
 	def to_html
-		"<iframe src=\"//player.twitch.tv/?video=v#{id}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<iframe src=\"//player.twitch.tv/?video=v#{id}&autoplay=#{SiteSetting.twitch_onebox_autoplay}#{timestamp}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
 
