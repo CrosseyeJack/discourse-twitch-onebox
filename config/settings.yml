@@ -1,8 +1,8 @@
 plugins:
   twitch_onebox_height:
-    default: 378
+    default: 360
   twitch_onebox_width:
-    default: 620
+    default: 640
   twitch_onebox_autoplay:
     default: false
     
