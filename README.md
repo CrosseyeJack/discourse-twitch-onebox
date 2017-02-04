@@ -13,7 +13,8 @@ hooks:
         cd: $home/plugins
         cmd:
           - mkdir -p plugins
-          - git clone https://github.com/crosseyejack/discourse-twitch-onebox.git
+          #- git clone https://github.com/crosseyejack/discourse-twitch-onebox.git  ## Hosted on GitHub
+          - git clone http://gitlab/crosseyejack/discourse-twitch-onebox.git        ## Hosted on Local GitLab Install for Dev/Testing/Stuff/Cheesecake
 ```
 
 Rebuild the container:
