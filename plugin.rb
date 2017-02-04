@@ -40,6 +40,7 @@ class Onebox::Engine::TwitchVideoOnebox
 		  "&time=" +@url.match(REGEX)[2]
     else
       ""
+    end
 	end
 	
 	def to_html
