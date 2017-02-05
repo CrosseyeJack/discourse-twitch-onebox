@@ -21,7 +21,7 @@ class Onebox::Engine::TwitchStreamOnebox
 	end
 	
 	def to_html
-		"<iframe src=\"//player.twitch.tv/?channel=#{channel}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<a href='#{link}' target='_blank'>#{link}</a><br><iframe src=\"//player.twitch.tv/?channel=#{channel}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
 
@@ -37,7 +37,11 @@ class Onebox::Engine::TwitchVideoOnebox
 	end
   
 	def timestamp
-		"&time=" +@url.match(REGEX)[2]
+    if !@url.match(REGEX)[2].nil?
+		  "&time=" +@url.match(REGEX)[2]
+    else
+      ""
+    end
 	end
 	
 	def to_html
@@ -61,6 +65,6 @@ class Onebox::Engine::TwitchClipsOnebox
 	end
 	
 	def to_html
-		"<iframe src=\"//clips.twitch.tv/embed?clip=#{channel}/#{clip_name}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<a href='#{link}' target='_blank'>#{link}</a><br><iframe src=\"//clips.twitch.tv/embed?clip=#{channel}/#{clip_name}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
