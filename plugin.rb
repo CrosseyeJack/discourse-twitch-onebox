@@ -41,7 +41,7 @@ class Onebox::Engine::TwitchVideoOnebox
 	end
 	
 	def to_html
-		"<iframe src=\"//player.twitch.tv/?video=v#{id}#{timestamp}&cheesecake=yesPlease&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"#{link}<iframe src=\"//player.twitch.tv/?video=v#{id}#{timestamp}&v12&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
 
