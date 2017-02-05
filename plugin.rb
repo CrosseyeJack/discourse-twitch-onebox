@@ -41,7 +41,7 @@ class Onebox::Engine::TwitchVideoOnebox
 	end
 	
 	def to_html
-		"<a href='#{link}' target='_blank'>#{title}</a<iframe src=\"//player.twitch.tv/?video=v#{id}#{timestamp}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
+		"<a href='#{link}' target='_blank'>#{title}</a><iframe src=\"//player.twitch.tv/?video=v#{id}#{timestamp}&autoplay=#{SiteSetting.twitch_onebox_autoplay}\" width=\"#{SiteSetting.twitch_onebox_width}\" height=\"#{SiteSetting.twitch_onebox_height}\" frameborder=\"0\" style=\"overflow: hidden;\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe>"
 	end
 end
 
