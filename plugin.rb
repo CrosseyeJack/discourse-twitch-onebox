@@ -13,7 +13,7 @@ enabled_site_setting :twitch_onebox_autoplay
 class Onebox::Engine::TwitchStreamOnebox
 	include Onebox::Engine
 
-	REGEX = /^(?:https?:\/\/)?(?:www\.)?twitch.tv\/(?!directory)([a-zA-Z0-9_]{4,25})/?$/
+	REGEX = /^(?:https?:\/\/)?(?:www\.)?twitch.tv\/(?!directory)([a-zA-Z0-9_]{4,25})\/?$/
 	matches_regexp REGEX
 
 	def channel
