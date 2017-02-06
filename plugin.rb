@@ -5,15 +5,15 @@
 # authors: Crosseye Jack
 # url: https://github.com/crosseyejack/discourse-twitch-onebox
 
-# Onebox for Twitch streams.
 enabled_site_setting :twitch_onebox_height
 enabled_site_setting :twitch_onebox_width
 enabled_site_setting :twitch_onebox_autoplay
 
+# Onebox for Twitch streams.
 class Onebox::Engine::TwitchStreamOnebox
 	include Onebox::Engine
 
-	REGEX = /^(?:https?:\/\/)?(?:www\.)?twitch.tv\/(?!directory)([a-zA-Z0-9_]{4,25})$/
+	REGEX = /^(?:https?:\/\/)?(?:www\.)?twitch.tv\/(?!directory)([a-zA-Z0-9_]{4,25})/?$/
 	matches_regexp REGEX
 
 	def channel
