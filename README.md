@@ -1,7 +1,7 @@
 # Discourse Twitch Onebox
 
 This plugin for Discourse extends Onebox to add support for properly embedding [Twitch](https://twitch.tv/) streams, videos (VODs), and Clips in Discourse posts. Videos embed as protocol-relative and with auto-play disabled.
-Calling this a V1 as I want to change up the templating can styling of the player for out use case.
+Calling this a V1 as I want to change up the templating can styling of the player for our use case.
 
 ## Installation
 
@@ -14,7 +14,7 @@ hooks:
         cd: $home/plugins
         cmd:
           - mkdir -p plugins
-          - git clone https://github.com/crosseyejack/discourse-twitch-onebox.git  ## Hosted on GitHub
+          - git clone https://github.com/crosseyejack/discourse-twitch-onebox.git
 ```
 
 Rebuild the container:
